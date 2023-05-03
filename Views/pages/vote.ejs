@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../templates/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../templates/header'); %>
+</header>
+
+<main>
+
+	<div id="Page1">
+		<div class="front-page">
+			<h1>K-POP BOY GROUP 2023 VOTING SYSTEM</h1>
+			<h3>RMB-Global Award  <i class="fa fa-handshake" aria-hidden="true"></i>  Asian Artist Award</h3>
+			<h6>Choose the next RMB Corporation Faces.</h6>
+			<a href="#" onclick="return show('Page2','Page1');">VOTE NOW</a>
+		</div>
+    </div>
+
+	<div id="Page2" style="display:none" class="page2">
+
+		<a href="#" onclick="return show('Page1','Page2');">Cancel Voting</a>
+
+		<div class="title">
+			<h2>Cast Your VOTE</h2>
+			<h6>Vote your Kpop Boy Group 2023</h6>
+		</div>
+	
+		<div class="about-container">
+			<div class="about-us" id ="btn_A">
+				<div class="card-image about-img1"></div>
+				<div class="about-text-box">
+					<h2>EXO</h2>
+					<h4>EXO-L</h4>
+					<button  type="submit" class="btn bt_A"  id ="btn_A" placeholder="Vote" >VOTE</button>
+				</div>
+			</div>
+	
+			<div class="about-us" id ="btn_B">
+				<div class="card-image about-img2"></div>
+				<div class="about-text-box">
+					<h2>GOT7</h2>
+					<h4>iGot7</h4>
+					<button  type="submit" class="btn bt_B"  id ="btn_B" placeholder="Vote" >VOTE</button>
+				</div>
+			</div>
+	
+			<div class="about-us" id="btn_C">
+				<div class="card-image about-img3"></div>
+				<div class="about-text-box">
+					<h2>BTS</h2>
+					<h4>ARMY</h4>
+					<button  type="submit" class="btn bt_C"  id ="btn_C" placeholder="Vote" >VOTE</button>
+				</div>
+			</div>
+	
+			<div class="about-us" id="btn_D">
+				<div class="card-image about-img4"></div>
+				<div class="about-text-box">
+					<h2>ASTRO</h2>
+					<h4>Aroha</h4>
+					<button  type="submit" class="btn bt_D"  id ="btn_D" placeholder="Vote" >VOTE</button>
+				</div>
+			</div>
+	
+			<div class="about-us" id="btn_E">
+				<div class="card-image about-img5"></div>
+				<div class="about-text-box">
+					<h2>NCT</h2>
+					<h4>NCTzen</h4>
+					<button  type="submit" class="btn bt_E"  id ="btn_E" placeholder="Vote" >VOTE</button>
+				</div>
+			</div>
+	
+			<div class="about-us" id="btn_F">
+				<div class="card-image about-img6"></div>
+				<div class="about-text-box">
+					<h2>Super Junior</h2>
+					<h4>E.L.F</h4>
+					<button  type="submit" class="btn bt_F"  id ="btn_F" placeholder="Vote" >VOTE</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+    <script type="text/javascript">
+		var socket= io.connect($("#span_url").html());
+
+		$("#btn_A").click(function(){
+			socket.emit('vote_A', '1');
+			socket.emit('vote_B', '0');
+			socket.emit('vote_C', '0');
+			socket.emit('vote_D', '0');
+			socket.emit('vote_E', '0');
+			socket.emit('vote_F', '0');
+			alert("vote done for EXO!");
+		});
+		$("#btn_B").click(function(){
+			socket.emit('vote_A', '0');
+			socket.emit('vote_B', '1');
+			socket.emit('vote_C', '0');
+			socket.emit('vote_D', '0');
+			socket.emit('vote_E', '0');
+			socket.emit('vote_F', '0');
+			alert("vote done for GOT7!");
+		});
+		$("#btn_C").click(function(){
+			socket.emit('vote_A', '0');
+			socket.emit('vote_B', '0');
+			socket.emit('vote_C', '1');
+			socket.emit('vote_D', '0');
+			socket.emit('vote_E', '0');
+			socket.emit('vote_F', '0');
+			alert("vote done for BTS!");
+		});
+		$("#btn_D").click(function(){
+			socket.emit('vote_A', '0');
+			socket.emit('vote_B', '0');
+			socket.emit('vote_C', '0');
+			socket.emit('vote_D', '1');
+			socket.emit('vote_E', '0');
+			socket.emit('vote_F', '0');
+			alert("vote done for ASTRO!");
+		});
+		$("#btn_E").click(function(){
+			socket.emit('vote_A', '0');
+			socket.emit('vote_B', '0');
+			socket.emit('vote_C', '0');
+			socket.emit('vote_D', '0');
+			socket.emit('vote_E', '1');
+			socket.emit('vote_F', '0');
+			alert("vote done for NCT!");
+		});
+		$("#btn_F").click(function(){
+			socket.emit('vote_A', '0');
+			socket.emit('vote_B', '0');
+			socket.emit('vote_C', '0');
+			socket.emit('vote_D', '0');
+			socket.emit('vote_E', '0');
+			socket.emit('vote_F', '1');
+			alert("vote done for SJ!");
+		});
+
+
+		function show(shown, hidden) {
+        document.getElementById(shown).style.display='block';
+        document.getElementById(hidden).style.display='none';
+        return false;
+        }
+	</script>
+</main>
+
+<footer>
+  <%- include('../templates/footer'); %>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../templates/head'); %>
+</head>
+<body >
+
+<header>
+  <%- include('../templates/header'); %>
+</header>
+
+<main>
+	<div class="title">
+        <h2>RESULT</h2>
+    </div>
+
+	<div class="about-container">
+		<div class="about-us">
+            <div class="card-image about-img1"></div>
+            <div class="about-text-box">
+                <h2>EXO</h2>
+                <h4>EXO-L</h4>
+				<h2 class="kpop"> VOTE: <span id = "span_A">0</span></h2>
+            </div>
+        </div>
+
+		<div class="about-us">
+            <div class="card-image about-img2"></div>
+            <div class="about-text-box">
+                <h2>GOT7</h2>
+                <h4>iGot7</h4>
+                <h2 class="kpop"> VOTE: <span id = "span_B">0</span></h2>
+            </div>
+        </div>
+
+		<div class="about-us">
+            <div class="card-image about-img3"></div>
+            <div class="about-text-box">
+                <h2>BTS</h2>
+                <h4>ARMY</h4>
+                <h2 class="kpop"> VOTE: <span id = "span_C">0</span></h2>
+            </div>
+        </div>
+
+		<div class="about-us">
+            <div class="card-image about-img4"></div>
+            <div class="about-text-box">
+                <h2>ASTRO</h2>
+				<h4>Aroha</h4>
+                <h2 class="kpop"> VOTE: <span id = "span_D">0</span></h2>
+            </div>
+        </div>
+
+		<div class="about-us">
+            <div class="card-image about-img5"></div>
+            <div class="about-text-box">
+                <h2>NCT</h2>
+				<h4>NCTzen</h4>
+                <h2 class="kpop"> VOTE: <span id = "span_E">0</span></h2>
+            </div>
+        </div>
+
+		<div class="about-us">
+            <div class="card-image about-img6"></div>
+            <div class="about-text-box">
+                <h2>Super Junior</h2>
+				<h4>E.L.F</h4>
+                <h2 class="kpop"> VOTE: <span id = "span_F">0</span></h2>
+            </div>
+        </div>
+	</div>
+
+	<script type="text/javascript">
+		var socket = io.connect($("#span_url").html());
+
+		socket.on('vote_A', function(vote){
+			var addVote = parseInt(vote);
+			var count = parseInt($("#span_A").html());
+
+			var newCount = count + addVote;
+			console.log(newCount);
+			$('#span_A').html(newCount);
+		});
+
+		socket.on('vote_B', function(vote){
+		var addVote = parseInt(vote);
+		var count = parseInt($("#span_B").html());
+
+		var newCount = count + addVote;
+		console.log(newCount);
+		$('#span_B').html(newCount);
+		});
+
+		socket.on('vote_C', function(vote){
+		var addVote = parseInt(vote);
+		var count = parseInt($("#span_C").html());
+
+		var newCount = count + addVote;
+		console.log(newCount);
+		$('#span_C').html(newCount);
+		});
+
+		socket.on('vote_D', function(vote){
+		var addVote = parseInt(vote);
+		var count = parseInt($("#span_D").html());
+
+		var newCount = count + addVote;
+		console.log(newCount);
+		$('#span_D').html(newCount);
+		});
+
+		socket.on('vote_E', function(vote){
+		var addVote = parseInt(vote);
+		var count = parseInt($("#span_E").html());
+
+		var newCount = count + addVote;
+		console.log(newCount);
+		$('#span_E').html(newCount);
+		});
+
+		socket.on('vote_F', function(vote){
+		var addVote = parseInt(vote);
+		var count = parseInt($("#span_F").html());
+
+		var newCount = count + addVote;
+		console.log(newCount);
+		$('#span_F').html(newCount);
+		});
+	</script>
+</main>
+
+<footer>
+  <%- include('../templates/footer'); %>
+</footer>
+
+</body>
+</html>

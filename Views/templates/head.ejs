@@ -1,0 +1,173 @@
+<meta charset="UTF-8">
+<title>Kpop Voting 2023</title>
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="socket.io/socket.io.js"></script>
+<!-- CSS (load bootstrap from a CDN) -->
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+:root{
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+}
+/* Front Page */
+
+.front-page{
+  text-align: center;
+  margin-top: 20%;
+}
+.front-page h1{
+  font-weight: 800;
+}
+.front-page h3{
+  font-weight: 800;
+  font-size: 3rem;
+}
+.front-page h6{
+  font-weight: 800;
+  font-size: 2rem;
+  color: beige;
+  padding-bottom: 2.5rem;
+}
+.front-page a{
+  text-decoration: none;
+  background-color: #292424;
+  color: white;
+  font-weight: 800;
+  font-size: 2rem;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+.front-page a:hover{
+  background-color: white;
+  color: #292424;
+}
+.page2{
+  padding: 15px 0;
+  text-align: center;
+}
+.page2 a{
+  text-decoration: none;
+  background-color: #292424;
+  color: white;
+  font-weight: 800;
+  font-size: 1.5rem;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+.page2 a:hover{
+  background-color: white;
+  color: #292424;
+}
+/*================CSS FOR BODY====================*/
+body {
+  background: url("https://img.freepik.com/free-photo/psychedelic-paper-shapes-with-copy-space_23-2149378246.jpg?w=900&t=st=1682559097~exp=1682559697~hmac=a9a8a68160f5eeaffabbccff1abec211622d85b5a9d008500ffe6566a7fda2e0") no-repeat fixed center;
+  background-size: cover;
+  font-family: var(--body-font);
+}
+.title{
+  text-align: center;
+}
+.title h2{
+  font-weight: 800;
+}
+.title h6{
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+main span{
+  visibility: hidden;
+}
+
+/*==================== ABOUT ====================*/
+.about-container{
+  font-family: var(--body-font);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  white-space: wrap;
+}
+.about-us{
+  background-color: beige;
+  width: 300px;
+  margin: 20px;
+  border-radius: 15px;
+}
+.card-image{
+  height: 300px;
+  margin-bottom: 15px;
+  background-size: cover;
+  border-radius: 15px 15px 0 0;
+}
+.about-img1{
+  background-image: url('https://pbs.twimg.com/media/Fppg2K0aMAEDKVs.jpg:large');
+}
+.about-img2{
+  background-image: url('https://www.sakshipost.com/sites/default/files/article_images/2022/02/3/GOT7-Contact-Information-1611837481.jpg');
+}
+.about-img3{
+  background-image: url('https://play-lh.googleusercontent.com/nUzK8WjxbT-X59mlDYyPej6HO_j45Ou7qOIIgnJbTO6IzNA6iAU_kMdA38hHGONBv9c');
+}
+.about-img4{
+  background-image: url('https://image.kpopmap.com/2019/01/ASTRO-DSR.jpg');
+}
+.about-img5{
+  background-image: url('https://image.kpopmap.com/2019/01/NCT-Member-Profile.jpg');
+}
+.about-img6{
+  background-image: url('https://pbs.twimg.com/media/FUTJawQaMAA4frG.jpg');
+}
+.about-text-box{
+  padding: 10px;
+  text-align: center;
+}
+.about-text-box h2{
+  font-weight: 700;
+}
+.about-text-box button{
+  background-color: rgb(53, 58, 56);
+  width: 80%;
+  color: #292424;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  margin-top: 2rem;
+}
+.about-us a{
+  background-color: rgb(53, 58, 56);
+  color: #fff;
+  padding: 10px 30px;
+  display: block;
+  text-align: center;
+  margin: 15px 30px;
+}
+.about-us a:hover{
+  background-color: rgb(43, 68, 58);
+  color: #fff;
+}
+
+.about-us h2 span{
+  visibility: visible;
+  z-index: 100;
+  font-size: 30px;
+}
+.about-us:hover{
+  background-color: rgba(62, 62, 62);
+  color: white;
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: all is ease;
+}
+</style>
